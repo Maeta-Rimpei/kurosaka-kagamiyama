@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
 
     <div class="container">
         <div id="target" class="img-wrapper">
@@ -24,6 +34,18 @@
             box-sizing: border-box;
         }
 
+        .container {
+            max-width: 30%;
+            margin-inline: auto;
+        }
+
+        @media screen and (max-width: 767px) {
+            .container {
+                max-width: 100%;
+                padding-inline: 15px;
+            }
+        }
+
         img {
             width: 100%;
             object-fit: cover;
@@ -31,7 +53,6 @@
 
         .img-wrapper {
             position: relative;
-            width: 39.5%;
         }
 
         @media screen and (max-width: 767px) {
@@ -42,10 +63,10 @@
         }
 
         .year-wrapper {
-            width: clamp(0px, 55 / 1366 * 100vw, 55px);
+            width: clamp(0px, 47 / 1366 * 100vw, 47px);
             position: absolute;
-            top: 14.5%;
-            left: 12%;
+            top: 14%;
+            left: 11%;
         }
 
         @media screen and (max-width: 767px) {
@@ -57,10 +78,10 @@
         }
 
         .month-wrapper {
-            width: clamp(0px, 55 / 1366 * 100vw, 55px);
+            width: clamp(0px, 47 / 1366 * 100vw, 47px);
             position: absolute;
-            top: 26.5%;
-            left: 12%;
+            top: 26%;
+            left: 11%;
         }
 
         @media screen and (max-width: 767px) {
@@ -72,10 +93,10 @@
         }
 
         .day-wrapper {
-            width: clamp(0px, 55 / 1366 * 100vw, 55px);
+            width: clamp(0px, 47 / 1366 * 100vw, 47px);
             position: absolute;
-            top: 38.5%;
-            left: 12%;
+            top: 37.5%;
+            left: 11%;
         }
 
         @media screen and (max-width: 767px) {
@@ -107,7 +128,7 @@
             // 2: "P3bT7yJr",
             // 3: "fL8dXvZp",
             // // ========= ↑ =================
-            
+
             // 4: "1_MIZ7GuDgCjmHUYPjhi-h5O7N9ZQLUAd",
             // // ========= ↓ =================
             // 5: "BvT6qWKm",
@@ -201,5 +222,6 @@
         window.onload = setDate();
 
     </script>
+</body>
 
-
+</html>
