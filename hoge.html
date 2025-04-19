@@ -1,0 +1,205 @@
+
+    <div class="container">
+        <div id="target" class="img-wrapper">
+            <!-- <img src="https://lh3.googleusercontent.com/d/1d5yxiNRdE9eStQacxrHBoN5fNCuNchYx" alt=""> -->
+            <img src="./Group 79 (2).png" alt="">
+
+            <span class="year-wrapper">
+                <img class="year" src="" alt="">
+            </span>
+            <span class="month-wrapper">
+                <img class="month" src="" alt="">
+            </span>
+            <span class="day-wrapper">
+                <img class="day" src="" alt="">
+            </span>
+        </div>
+        <button class="download-btn" onclick="getImage()">ダウンロード(Download)</button>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 39.5%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .img-wrapper {
+                width: 100%;
+            }
+
+        }
+
+        .year-wrapper {
+            width: clamp(0px, 55 / 1366 * 100vw, 55px);
+            position: absolute;
+            top: 14.5%;
+            left: 12%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .year-wrapper {
+                width: clamp(0px, 77 / 768 * 100vw, 77px);
+                left: 11.5%;
+            }
+
+        }
+
+        .month-wrapper {
+            width: clamp(0px, 55 / 1366 * 100vw, 55px);
+            position: absolute;
+            top: 26.5%;
+            left: 12%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .month-wrapper {
+                width: clamp(0px, 77 / 768 * 100vw, 77px);
+                left: 11.5%;
+            }
+
+        }
+
+        .day-wrapper {
+            width: clamp(0px, 55 / 1366 * 100vw, 55px);
+            position: absolute;
+            top: 38.5%;
+            left: 12%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .day-wrapper {
+                width: clamp(0px, 77 / 768 * 100vw, 77px);
+                left: 11.5%;
+                top: 38%;
+            }
+
+        }
+
+        .download-btn {
+            width: 100%;
+            padding-block: 5px;
+            padding-inline: 15px;
+            text-align: center;
+            background: #637457;
+            border: none;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+    <script>
+
+        const imgSrcMap = {
+            // 1: "a9XzKqLm",
+            // 2: "P3bT7yJr",
+            // 3: "fL8dXvZp",
+            // // ========= ↑ =================
+            
+            // 4: "1_MIZ7GuDgCjmHUYPjhi-h5O7N9ZQLUAd",
+            // // ========= ↓ =================
+            // 5: "BvT6qWKm",
+            // 6: "Xe9Lm2Zc",
+            // 7: "1MhHlvMOWbeJ7JeloqqdOgRtjRYuD4Bxq",
+            // 8: "Zw3MkBpL",
+            // 9: "Tq1LoNxM",
+            // 10: "Cc4YdZqE",
+            // 11: "YpKzMx1Q",
+            // 12: "D7qLmVfW",
+            // 13: "UeX1bNzA",
+            // 14: "VmR3dKyP",
+            // 15: "WpLzMkT9",
+            // 16: "QoYvRwCn",
+            // 17: "LnZxW8Eb",
+            // 18: "Kp7MqRxT",
+
+            // 19: "1YfwdAgmWiiFdH0QPxjySUNCENmTU89Lx",
+            // 20: "1VzBB2Ci2jnn8YTJAACR_YgsBkt1z_cqp",
+            // 21: "1F78jhFc9y49WMe98ABKjKSrzKQJIPemV",
+            // 22: "1PnYMaU6RIG18lK8f25NHh4YARUCYzKja",
+            // 23: "1dVc0pSJVVlj_nZnC6q5S1qykqzEulKv3",
+            // 24: "1SzneZmBdRlNxRxEUUYsFzo0MrnSLr9vd",
+            // 25: "18Rbi3JORWE56r6o_hYHbf7FauNz-9Tu3",
+            // 26: "LuXmNvQ1",
+            // 27: "MwYbZtK4",
+            // 28: "NxZpLwCm",
+            // 29: "OyRkXbT9",
+            // 30: "PzLmQxW7",
+            // 31: "QaXnRvM2"
+        };
+
+        for (let i = 0; i < 32; i++) {
+            imgSrcMap[i] = `${i}.png`
+        }
+
+
+        /**
+         * ダウンロード
+         */
+        const getImage = () => {
+            const target = document.getElementById("target");
+            const options = {
+                type: "png",
+                quality: 1
+            };
+            html2canvas(target, options).then((canvas) => {
+
+                const dataURL = canvas.toDataURL();
+                const link = document.createElement("a");
+                link.href = dataURL;
+                link.download = "kurosaka_kagamiyamajo.png";
+                link.click();
+            });
+        }
+
+        /**
+         * 和暦変換
+         * @return number 年数(和暦)
+         */
+        const jaYear = () => {
+            const reiwaStartYear = 2019;
+            const now = new Date();
+            const nowYear = now.getFullYear();
+
+            return nowYear - reiwaStartYear + 1;
+        }
+
+        /**
+         * 日付を設定
+         * @return void
+         */
+        const setDate = () => {
+            const d = document;
+
+            const year = d.querySelector('.year');
+            const month = d.querySelector('.month');
+            const day = d.querySelector('.day');
+            const now = new Date();
+
+            const imageSrcUrl = 'https://lh3.googleusercontent.com/d/';
+
+            // year.src = imageSrcUrl + imgSrcMap[jaYear()];
+            // month.src = imageSrcUrl + imgSrcMap[now.getMonth() + 1];
+            // day.src = imageSrcUrl + imgSrcMap[now.getDate()];
+            year.src = imgSrcMap[jaYear()];
+            month.src = imgSrcMap[now.getMonth() + 1];
+            day.src = imgSrcMap[now.getDate()];
+        }
+
+        window.onload = setDate();
+
+    </script>
+
+
