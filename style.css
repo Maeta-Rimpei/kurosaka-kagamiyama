@@ -9,6 +9,15 @@ img {
     object-fit: cover;
 }
 
+iframe {
+    overflow: hidden;
+    scrollbar-width: none !important;
+}
+
+iframe::-webkit-scrollbar {
+    display: none !important;
+}
+
 .container {
     max-width: 30%;
     margin-inline: auto;
