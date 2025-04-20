@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <title>鏡山城｜登城記念</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<style>
+    .frame-wrapper {
+        height: 100%;
+    }
+</style>
 <body>
+    <div class="frame-wrapper">
+        <iframe src="https://kurosaka-kagamiyama.vercel.app/" width="100%" height="600" frameborder="0"></iframe>
+    </div>
 
+
+
+
+
+    =========================================
     <div class="container">
         <div id="target" class="img-wrapper">
             <img src="./images/kagamiyamajo.png" alt="">
 
-            <span class="year-wrapper">
+            <span class="date-size date-x-pos year-wrapper">
                 <img class="year" src="" alt="">
             </span>
-            <span class="month-wrapper">
+            <span class="date-size date-x-pos month-wrapper">
                 <img class="month" src="" alt="">
             </span>
-            <span class="day-wrapper">
+            <span class="date-size date-x-pos day-wrapper">
                 <img class="day" src="" alt="">
             </span>
         </div>
         <button class="download-btn" onclick="getImage()">ダウンロード(Download)</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>

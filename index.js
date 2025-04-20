@@ -41,13 +41,14 @@ const jaYear = () => {
  */
 const setDate = () => {
     const d = document;
+console.log("emthod");
 
     const year = d.querySelector('.year');
     const month = d.querySelector('.month');
     const day = d.querySelector('.day');
     const now = new Date();
 
-    const imageDir = '/images/days/';
+    const imageDir = './images/days/';
 
     year.src = imageDir + imgSrcMap[jaYear()];
     month.src = imageDir + imgSrcMap[now.getMonth() + 1];
@@ -55,3 +56,11 @@ const setDate = () => {
 }
 
 window.onload = setDate();
+
+/**
+ * iframeの高さを自動調整するために連携先へ高さを通知する
+ */
+const postIframeHeight = () => {
+    const height = document.documentElement.offsetHeight;
+    window.parent.postMessage({ iframeHeight: height }, 'https://sites.google.com/view/hog-hoge/%E3%83%9B%E3%83%BC%E3%83%A0');
+};

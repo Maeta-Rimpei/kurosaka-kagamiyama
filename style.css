@@ -30,58 +30,51 @@ img {
     .img-wrapper {
         width: 100%;
     }
+}
 
+.date-size {
+    width: clamp(0px, 47 / 1366 * 100vw, 47px);
+}
+
+@media screen and (max-width: 767px) {
+    .date-size {
+        width: clamp(0px, 77 / 768 * 100vw, 77px);
+    }
+}
+
+.date-x-pos {
+    position: absolute;
+    left: 11%;
+}
+
+@media screen and (max-width: 767px) {
+    .date-x-pos {
+        left: 11.5%;
+    }
 }
 
 .year-wrapper {
-    width: clamp(0px, 47 / 1366 * 100vw, 47px);
-    position: absolute;
     top: 14%;
-    left: 11%;
 }
 
-@media screen and (max-width: 767px) {
-    .year-wrapper {
-        width: clamp(0px, 77 / 768 * 100vw, 77px);
-        left: 11.5%;
-    }
-
-}
 
 .month-wrapper {
-    width: clamp(0px, 47 / 1366 * 100vw, 47px);
-    position: absolute;
     top: 26%;
-    left: 11%;
-}
-
-@media screen and (max-width: 767px) {
-    .month-wrapper {
-        width: clamp(0px, 77 / 768 * 100vw, 77px);
-        left: 11.5%;
-    }
-
 }
 
 .day-wrapper {
-    width: clamp(0px, 47 / 1366 * 100vw, 47px);
-    position: absolute;
     top: 37.5%;
-    left: 11%;
 }
 
 @media screen and (max-width: 767px) {
     .day-wrapper {
-        width: clamp(0px, 77 / 768 * 100vw, 77px);
-        left: 11.5%;
         top: 38%;
     }
-
 }
 
 .download-btn {
     width: 100%;
-    padding-block: 5px;
+    padding-block: 10px;
     padding-inline: 15px;
     text-align: center;
     background: #637457;
