@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 30%;
+    margin-inline: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding-inline: 15px;
+    }
+}
+
+
+.img-wrapper {
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .img-wrapper {
+        width: 100%;
+    }
+
+}
+
+.year-wrapper {
+    width: clamp(0px, 47 / 1366 * 100vw, 47px);
+    position: absolute;
+    top: 14%;
+    left: 11%;
+}
+
+@media screen and (max-width: 767px) {
+    .year-wrapper {
+        width: clamp(0px, 77 / 768 * 100vw, 77px);
+        left: 11.5%;
+    }
+
+}
+
+.month-wrapper {
+    width: clamp(0px, 47 / 1366 * 100vw, 47px);
+    position: absolute;
+    top: 26%;
+    left: 11%;
+}
+
+@media screen and (max-width: 767px) {
+    .month-wrapper {
+        width: clamp(0px, 77 / 768 * 100vw, 77px);
+        left: 11.5%;
+    }
+
+}
+
+.day-wrapper {
+    width: clamp(0px, 47 / 1366 * 100vw, 47px);
+    position: absolute;
+    top: 37.5%;
+    left: 11%;
+}
+
+@media screen and (max-width: 767px) {
+    .day-wrapper {
+        width: clamp(0px, 77 / 768 * 100vw, 77px);
+        left: 11.5%;
+        top: 38%;
+    }
+
+}
+
+.download-btn {
+    width: 100%;
+    padding-block: 5px;
+    padding-inline: 15px;
+    text-align: center;
+    background: #637457;
+    border: none;
+    color: #fff;
+    margin-top: 2rem;
+}
